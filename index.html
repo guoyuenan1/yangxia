@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生日祝福</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="home-page">
+        <h1 class="birthday-text">生日快乐</h1>
+        <div class="balloons"></div>
+        <div class="login-form">
+            <div class="username">yang</div>
+            <input type="password" id="password" placeholder="输入密码">
+            <button id="enter-btn">进入</button>
+        </div>
+    </div>
+
+    <div id="content-page" class="hidden">
+        <div id="text-display"></div>
+        <div id="image-slideshow" class="hidden"></div>
+        <button id="return-btn" class="hidden">返回</button>
+        <div class="signature">Created by Guo, and Cline</div>
+    </div>
+
+    <canvas id="fireworks"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
