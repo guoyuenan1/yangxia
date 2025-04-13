@@ -37,11 +37,15 @@ const balloonsContainer = document.querySelector('.balloons');
 const fireworksCanvas = document.getElementById('fireworks');
 const ctx = fireworksCanvas.getContext('2d');
 
+// 音频元素
+const bgMusic = new Audio('music/生日快乐.mp3');
+
 // 初始化
 function init() {
     createBalloons(20);
     setupEventListeners();
     resizeCanvas();
+    bgMusic.loop = true;
 }
 
 // 创建气球
@@ -75,6 +79,7 @@ function checkPassword() {
     if (passwordInput.value === '930407') {
         homePage.classList.add('hidden');
         contentPage.classList.remove('hidden');
+        bgMusic.play().catch(e => console.log('自动播放被阻止:', e));
         startContentShow();
     } else {
         alert('密码错误，请重新输入');
@@ -87,6 +92,8 @@ function returnToHome() {
     contentPage.classList.add('hidden');
     homePage.classList.remove('hidden');
     passwordInput.value = '';
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
     location.reload(); // 重置所有状态
 }
 
